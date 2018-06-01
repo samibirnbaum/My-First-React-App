@@ -8,6 +8,37 @@
     </head>
     
     <body>
-        <p>Hello World!</p>
+
+        <div id="hello">
+            <!-- JS component gets mounted here -->
+        </div>
+
+
+        <!-- Include the JS Scripts to get react working -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+        <!-- pre-compiles JSX and ES6 for the browser to understand -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+        
+        <!-- Where we can write our JS -->
+        <script type="text/babel">
+            // Our component is class with all the react functionality
+            class Greeting extends React.Component {
+                render () {
+                    return (
+                        <div>
+                            <h1>Hello React</h1>
+                            <p>lets see</p>
+                        </div>
+                    );
+                }
+            }
+            
+            // renders the given component in the given element
+            ReactDOM.render(
+                <Greeting/>, document.getElementById("hello")
+            );
+
+        </script>
     </body>
 </html>
